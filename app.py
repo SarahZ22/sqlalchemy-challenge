@@ -1,7 +1,4 @@
 #Now that you have completed your initial analysis, design a Flask API based on the queries that you have just developed.
-#start-start/end
-# When given the start only, calculate TMIN, TAVG, and TMAX for all dates greater than and equal to the start date
-# When given the start and the end date, calculate the TMIN, TAVG, and TMAX for dates between the start and end date inclusive.
 
 #dependencies
 import sqlalchemy
@@ -130,6 +127,7 @@ def start(start=None):
     #print results as JSON
     return jsonify(stattemps)
     
+    
 # Return a JSON list of the minimum temperature, the average temperature, and the max temperature for a given start-end range    
 #Routes - start/end
 @app.route("/api/v1.0/<start>/<end>")
@@ -155,6 +153,7 @@ def start_end(start=None, end=None):
         stattemps2.append(statdict2)
     #print results as JSON
     return jsonify(stattemps2)
+   
     
 #end code to run all
 if __name__ == '__main__':
